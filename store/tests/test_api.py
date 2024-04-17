@@ -27,3 +27,4 @@ class BooksApiTestCase(APITestCase):
         serializer_data = BookSerializer([self.book_1, self.book_3], many=True).data
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         self.assertEqual(serializer_data, response.data)
+
