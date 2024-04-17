@@ -9,8 +9,8 @@ router = SimpleRouter()
 router.register(r'book', BookViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url('', include('social_django.urls', namespace='social'))
+    path('', include('main.urls')),
+    path('admin/', admin.site.urls)
 ]
 
 urlpatterns += router.urls

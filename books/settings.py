@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
-    'store'
+    'store',
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -85,11 +86,6 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-
-AUTHENTICATION_BACKENDS = (
-    '',
-    'django.contrib.auth.backends.ModelBackend'
-)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -140,5 +136,3 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-SOCIAL_AUTH_POSTGRES_JSONFIELD = True
