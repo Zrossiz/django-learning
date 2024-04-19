@@ -11,7 +11,8 @@ router = SimpleRouter()
 router.register(r'book', BookViewSet)
 
 urlpatterns = [
-    path('', include('main.urls')),
+    # path('', include('main.urls')),
+    path('', include('women.urls')),
     path('admin/', admin.site.urls)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
 
