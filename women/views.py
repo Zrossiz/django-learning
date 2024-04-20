@@ -1,15 +1,9 @@
-from rest_framework.response import Response
-from rest_framework import generics
-from .models import Women
-from .serializers import WomenSerializer
-from rest_framework.views import APIView
+from rest_framework import viewsets
+
+from women.models import Women
+from women.serializers import WomenSerializer
 
 
-class WomenApiList(generics.ListCreateAPIView):
-    queryset = Women.objects.all()
-    serializer_class = WomenSerializer
-
-
-class WomenApiDetailView(generics.RetrieveUpdateDestroyAPIView):
+class WomenViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Women.objects.all()
     serializer_class = WomenSerializer

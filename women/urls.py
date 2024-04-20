@@ -1,8 +1,10 @@
-from django.urls import path
-
+from django.urls import path, include
 from women.views import *
+from rest_framework import routers
+
+router = routers.SimpleRouter()
+router.register(r'women', WomenViewSet)
 
 urlpatterns = [
-    path('api/womenlist/', WomenApiList.as_view()),
-    path('api/womenlist/<int:pk>/', WomenApiDetailView.as_view())
+    path('api/', include(router.urls))
 ]
